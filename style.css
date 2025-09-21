@@ -63,6 +63,7 @@ body {
 .top p {
     font-size: 12px;
     margin: 0;
+    color: #98a2b3;
 }
 
 .subtitle {
@@ -71,20 +72,76 @@ body {
     color: #98a2b3;
 }
 
-button {
-    background: #111827;
-    color: #e6eef8;
-    font-size: 18px;
-    padding: 18px 10px;
-    border: 0px;
-    border-radius: 12px;
-} 
-
 .display {
     display: flex;
     flex-direction: column;
     background: #0b1220;
     width: 100%;
     height: 80px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: right;
+    gap: 6px;
+    border: 1px solid rgba(255,255,255,0.02);
 }
+
+#expression {
+    color: #98a2b3;
+    font-size: 13px;
+    line-height: 1;
+    word-break: break-all;
+    min-height: 18px;
+}
+
+#result {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    word-break: break-all;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    width: 85px;
+    height: 55px;
+    background: #111827;
+    color: #e6eef8;
+    font-size: 18px;
+    padding: 18px 10px;
+    border: 1px solid rgba(125, 92, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition:transform .06s ease, box-shadow .06s ease;
+    box-shadow: 0 4px 10px rgba(2,6,23,0.5);
+    user-select:none;
+} 
+
+.btn:focus {
+    outline: 2px solid rgba(250, 120, 68, 0.979);
+    outline-offset: 2px;
+}
+
+#AC {
+    background: rgba(243, 58, 58, 0.952);
+}
+
+button#Equals {
+    background: rgba(250, 120, 68, 0.979);
+}
+
+button.op {
+    background: #1f2937;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+}
+
 
