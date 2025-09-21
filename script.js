@@ -27,9 +27,11 @@ function operate(operator, a, b) {
     }
 }
 
+const expression = document.querySelector("#expression");
 const result = document.querySelector("#result");
 const numberButtons = document.querySelectorAll(".num");
-const operatorButtons = document.querySelectorAll(".op")
+const operatorButtons = document.querySelectorAll(".op");
+const equals = document.querySelector(".equals");
 let resultValue = "0";
 let firstNumber = "";
 let secondNumber = "";
@@ -38,6 +40,19 @@ let currentOperator = null;
 numberButtons.forEach(
     btn => btn.addEventListener("click", () => appendNumber(btn.value))
 );
+
+operatorButtons.forEach(
+    btn => btn.addEventListener("click", () => getOperator(btn.value))
+);
+
+equals.addEventListener("click", evaluate);
+
+function getOperator(operator) {
+    firstNumber = resultValue;
+    clearResult();
+    currentOperator = operator;
+    
+}
 
 function appendNumber(value) {
     if(resultValue === "0") {
@@ -53,4 +68,16 @@ function updateResult() {
     result.textContent = resultValue;
 }
 
+function evaluate() {
+    if(currentOperator === null) return
+    secondNumber = result.textContent;
+    let res = operate(currentOperator, firstNumber, secondNumber);
+    resultValue = res.toString();
+    updateResult();
+    currentOperator = null;
+}
 
+function clearResult() {
+    result.textContent = "0";
+    resultValue = "0";
+}
